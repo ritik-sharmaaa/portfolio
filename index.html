@@ -7,41 +7,37 @@
 
     <title>Ritik Sharma | Portfolio</title>
 
-    <meta name="description" content="Ritik Sharma | Full Stack Developer & Data Science Student at IIT Madras. Specializing in Python, Django, and Modern Web UI.">
-    <meta name="keywords" content="Ritik Sharma, Ritik Sharma portfolio, web developer Ritik Sharma">
+    <meta name="description" content="Ritik Sharma | Full Stack Developer & Data Science Student at IIT Madras. Expertise in Python, Django, and Web UI.">
+    <meta name="keywords" content="Ritik Sharma, Ritik Sharma portfolio, Full Stack Developer, IIT Madras Data Science">
     <meta name="author" content="Ritik Sharma">
     <meta name="robots" content="index, follow">
-
     <link rel="canonical" href="https://ritiksharmaa.in">
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Poppins, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: #000;
             color: #fff;
-            overflow: hidden;
+            overflow: hidden; /* Initial lock for loader */
         }
 
-        /* LOADER */
+        /* LOADER SECTION */
         .loader {
             position: fixed;
             inset: 0;
@@ -56,28 +52,25 @@
             letter-spacing: 12px;
             font-size: 18px;
             opacity: .2;
+            font-weight: 300;
         }
 
-        /* NAV */
+        /* NAVIGATION - ROHAN STYLE */
         nav {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            padding: 30px 80px;
-        }
-
-        .logo {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            font-size: 20px;
+            padding: 25px 80px;
+            background: #000;
         }
 
-        .logo img {
-            height: 35px;
-            width: auto;
-            border-radius: 50%;
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800; /* Extra Bold */
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
         }
 
         .nav-center ul {
@@ -87,22 +80,41 @@
         }
 
         .nav-center a {
-            color: #aaa;
+            color: #fff;
             text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
             transition: 0.3s;
         }
 
-        .nav-center a:hover {
+        .nav-center a:hover { color: #aaa; }
+
+        /* Hire Me Button */
+        .hire-btn {
+            border: 1px solid #333;
+            padding: 10px 24px;
+            border-radius: 50px;
             color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s ease;
         }
 
-        /* MAIN */
+        .hire-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* MAIN CONTENT AREA */
         .main {
             display: none;
             padding: 40px 80px;
         }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero {
             display: flex;
             gap: 30px;
@@ -119,12 +131,12 @@
         .left img {
             width: 100%;
             border-radius: 20px;
+            margin-bottom: 15px;
         }
 
         .socials {
             display: flex;
             justify-content: center;
-            margin-top: 15px;
             gap: 15px;
         }
 
@@ -142,9 +154,7 @@
             transition: 0.3s;
         }
 
-        .socials a:hover {
-            background: #ff6a3d;
-        }
+        .socials a:hover { background: #ff6a3d; transform: translateY(-3px); }
 
         .right {
             flex: 1;
@@ -162,20 +172,22 @@
         .status {
             margin-top: 20px;
             color: #7CFF7C;
+            font-size: 14px;
         }
 
         .download-btn {
             display: inline-block;
             margin-top: 25px;
-            padding: 12px 26px;
+            padding: 12px 28px;
             background: #ff6a3d;
             border-radius: 30px;
             color: #fff;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
         }
 
-        /* SKILLS */
+        /* SKILLS GRID */
         .skills {
             display: flex;
             gap: 20px;
@@ -189,38 +201,31 @@
             text-align: center;
         }
 
-        /* WORKS */
-        #works {
-            margin-top: 100px;
-        }
+        /* WORKS SECTION */
+        #works { margin-top: 80px; }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            margin-top: 30px;
         }
 
         .project {
-            background: #111;
-            padding: 20px;
+            background: #1a1a1a;
+            padding: 30px;
             border-radius: 20px;
             text-align: center;
+            border: 1px solid #333;
         }
 
-        /* RESPONSIVE */
-        @media(max-width:900px) {
-            .hero {
-                flex-direction: column;
-            }
-
-            nav,
-            .main {
-                padding: 30px;
-            }
-
-            .nav-center {
-                display: none;
-            }
+        /* RESPONSIVE DESIGN */
+        @media(max-width: 900px) {
+            .hero { flex-direction: column; }
+            nav, .main { padding: 30px; }
+            .nav-center, .hire-btn { display: none; }
+            .skills { flex-direction: column; }
+            .left { width: 100%; }
         }
     </style>
 </head>
@@ -232,54 +237,53 @@
     </div>
 
     <nav>
-        <div class="logo">
-            <img src="assets/favicon.png" alt="RS Logo">
-            <span>RITIK SHARMA</span>
-        </div>
+        <div class="logo-text">RITIK</div>
 
         <div class="nav-center">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#works">Works</a></li>
                 <li><a href="service.html">Service</a></li>
+                <li><a href="#works">Works</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-        <div></div>
+
+        <div>
+            <a href="contact.html" class="hire-btn">
+                Hire Me <i class="fa-solid fa-handshake"></i>
+            </a>
+        </div>
     </nav>
 
     <div class="main">
+        
         <div class="hero" id="about">
             <div class="left reveal">
                 <img src="assets/img.png" alt="Ritik Sharma">
                 <h2>Ritik Sharma</h2>
                 <div class="socials">
-                    <a href="https://www.linkedin.com/in/ritik-sharma-93056638b/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/ritik-sharmaaa" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <a href="https://www.linkedin.com/in/ritik-sharma-93056638b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ritik-sharmaaa" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
 
             <div class="right">
                 <div class="card reveal">
                     <h3>Hello There!</h3>
-                    <h1>I am a student learning Web Development, focused on frontend, backend and databases.</h1>
-                    <div class="status">● Available for learning & projects</div>
+                    <h1>I am a Full Stack Developer & Data Science Student at IIT Madras.</h1>
+                    <div class="status">● Available for learning & professional projects</div>
                     <a href="assets/cv.pdf" download class="download-btn">Download CV</a>
                 </div>
 
                 <div class="skills">
                     <div class="skill reveal">
                         <h2>Frontend</h2>
-                        <p>HTML • CSS • JavaScript</p>
+                        <p>HTML • CSS • JS</p>
                     </div>
                     <div class="skill reveal">
                         <h2>Backend</h2>
-                        <p>Python • Java • Django</p>
+                        <p>Python • Django • Java</p>
                     </div>
                     <div class="skill reveal">
                         <h2>Database</h2>
@@ -292,16 +296,16 @@
         <section id="works" class="card reveal">
             <h2>Works & Projects</h2>
             <div class="projects">
-                <div class="project">Project 1</div>
-                <div class="project">Project 2</div>
-                <div class="project">Project 3</div>
+                <div class="project">Job Portal Project</div>
+                <div class="project">Love with Nature Web</div>
+                <div class="project">Data Analytics Tool</div>
             </div>
         </section>
     </div>
 
     <script>
         window.addEventListener("load", () => {
-            // Reliable Loading Time: Total approx 1.8s
+            // Reliable Loading Time: ~1.8 Seconds
             gsap.to(".loader span", {
                 opacity: 1,
                 duration: 0.6,
@@ -320,15 +324,17 @@
                 }
             });
 
+            // Content Reveal Animation
             gsap.utils.toArray(".reveal").forEach(el => {
                 gsap.from(el, {
                     scrollTrigger: {
                         trigger: el,
-                        start: "top 80%"
+                        start: "top 85%"
                     },
-                    y: 60,
+                    y: 40,
                     opacity: 0,
-                    duration: 1
+                    duration: 0.8,
+                    ease: "power2.out"
                 });
             });
         });
