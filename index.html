@@ -2,333 +2,382 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ritik Sharma | Portfolio</title>
-  <meta name="description"
-    content="Ritik Sharma Portfolio - Web Developer skilled in HTML, CSS, JavaScript, Python, Flask and Django.">
-  <meta name="keywords" content="Ritik Sharma, Ritik Sharma portfolio, web developer Ritik Sharma">
-  <meta name="author" content="Ritik Sharma">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ritiksharmaa.in">
-  <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Person",
- "name": "Ritik Sharma",
- "url": "https://ritiksharmaa.in",
- "sameAs": [
-   "https://www.linkedin.com/in/ritik-sharma-93056638b/"
- ]
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ritik Sharma | Portfolio</title>
+
+<meta name="description" content="Ritik Sharma Portfolio - Web Developer skilled in HTML, CSS, JavaScript, Python, Flask and Django.">
+<meta name="keywords" content="Ritik Sharma, Ritik Sharma portfolio, web developer Ritik Sharma">
+<meta name="author" content="Ritik Sharma">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://ritiksharmaa.in">
+
+<link rel="icon" type="image/png" href="assets/title.png">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
 }
-</script>
-  <link rel="icon" type="image/png" href="assets/title.png"><!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+html{
+scroll-behavior:smooth;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Poppins, sans-serif;
-    }
+body{
+background:#000;
+color:#fff;
+overflow:hidden;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* LOADER */
 
-    body {
-      background: #000;
-      color: #fff;
-      overflow: hidden;
-    }
+.loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
 
-    /* ===== LOADER ===== */
-    .loader {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
+.loader span{
+letter-spacing:12px;
+font-size:18px;
+opacity:.2;
+}
 
-    .loader span {
-      letter-spacing: 12px;
-      font-size: 18px;
-      opacity: .2;
-    }
+/* NAV */
 
-    /* ===== NAV ===== */
-    nav {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 30px 80px;
-    }
+nav{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+padding:30px 80px;
+}
 
-    .logo {
-      font-weight: 600;
-    }
+.logo{
+font-weight:600;
+}
 
-    .nav-center ul {
-      display: flex;
-      list-style: none;
-      gap: 35px;
-    }
+.nav-center ul{
+display:flex;
+list-style:none;
+gap:35px;
+}
 
-    .nav-center a {
-      color: #aaa;
-      text-decoration: none;
-    }
+.nav-center a{
+color:#aaa;
+text-decoration:none;
+}
 
-    .nav-center a:hover {
-      color: #fff;
-    }
+.nav-center a:hover{
+color:#fff;
+}
 
-    /* ===== LAYOUT ===== */
-    .main {
-      display: none;
-      padding: 40px 80px;
-    }
+/* MAIN */
 
-    .hero {
-      display: flex;
-      gap: 30px;
-    }
+.main{
+display:none;
+padding:40px 80px;
+}
 
-    .left {
-      width: 300px;
-      background: #111;
-      border-radius: 25px;
-      padding: 25px;
-      text-align: center;
-    }
+/* HERO */
 
-    .left img {
-      width: 100%;
-      border-radius: 20px;
-    }
+.hero{
+display:flex;
+gap:30px;
+}
 
-    .socials {
-      display: flex;
-      justify-content: center;
-      margin-top: 15px;
-    }
+.left{
+width:300px;
+background:#111;
+border-radius:25px;
+padding:25px;
+text-align:center;
+}
 
-    .socials a {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
+.left img{
+width:100%;
+border-radius:20px;
+}
 
-    .right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+.socials{
+display:flex;
+justify-content:center;
+margin-top:15px;
+gap:10px;
+}
 
-    .card {
-      background: #111;
-      padding: 40px;
-      border-radius: 25px;
-    }
+.socials a{
+width:40px;
+height:40px;
+border-radius:10px;
+background:#1a1a1a;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:#fff;
+font-size:18px;
+}
 
-    .status {
-      margin-top: 20px;
-      color: #7CFF7C;
-    }
+.right{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:30px;
+}
 
-    .download-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 26px;
-      background: #ff6a3d;
-      border-radius: 30px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.card{
+background:#111;
+padding:40px;
+border-radius:25px;
+}
 
-    /* ===== SKILLS ===== */
-    .skills {
-      display: flex;
-      gap: 20px;
-    }
+.status{
+margin-top:20px;
+color:#7CFF7C;
+}
 
-    .skill {
-      flex: 1;
-      background: #111;
-      padding: 30px;
-      border-radius: 25px;
-      text-align: center;
-    }
+.download-btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 26px;
+background:#ff6a3d;
+border-radius:30px;
+color:#fff;
+text-decoration:none;
+font-size:14px;
+}
 
-    /* ===== WORKS ===== */
-    #works {
-      margin-top: 100px;
-    }
+/* SKILLS */
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
+.skills{
+display:flex;
+gap:20px;
+}
 
-    .project {
-      background: #111;
-      padding: 20px;
-      border-radius: 20px;
-      text-align: center;
-    }
+.skill{
+flex:1;
+background:#111;
+padding:30px;
+border-radius:25px;
+text-align:center;
+}
 
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:900px) {
-      .hero {
-        flex-direction: column;
-      }
+/* WORKS */
 
-      nav,
-      .main {
-        padding: 30px;
-      }
-    }
-  </style>
+#works{
+margin-top:100px;
+}
 
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.project{
+background:#111;
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+}
+
+nav,.main{
+padding:30px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- LOADER -->
-  <div class="loader">
-    <span>L O A D I N G</span>
-  </div>
+<!-- LOADER -->
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="logo">RITIK</div>
+<div class="loader">
+<span>L O A D I N G</span>
+</div>
 
-    <div class="nav-center">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+<!-- NAV -->
 
-    <div></div>
-  </nav>
+<nav>
 
-  <!-- MAIN -->
-  <div class="main">
+<div class="logo">RITIK</div>
 
-    <!-- HERO -->
-    <div class="hero" id="about">
-      <div class="left reveal">
-        <img src="assets/img.png" alt="Ritik Sharma">
-        <h2>Ritik Sharma</h2>
+<div class="nav-center">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#works">Works</a></li>
+<li><a href="service.html">Service</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
 
-        <div class="socials">
+<div></div>
 
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/ritik-sharma-93056638b/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+</nav>
 
-          <!-- GitHub -->
-          <a href="https://github.com/ritik-sharmaaa" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
+<!-- MAIN -->
 
-        </div>
+<div class="main">
 
-        <div class="right">
-          <div class="card reveal">
-            <h3>Hello There!</h3>
-            <h1>
-              I am a student learning Web Development,
-              focused on frontend, backend and databases.
-            </h1>
-            <div class="status">● Available for learning & projects</div>
+<!-- HERO -->
 
-            <a href="assets/cv.pdf" download class="download-btn">Download CV</a>
-          </div>
+<div class="hero" id="about">
 
-          <div class="skills">
-            <div class="skill reveal">
-              <h2>Frontend</h2>
-              <p>HTML • CSS • JavaScript</p>
-            </div>
-            <div class="skill reveal">
-              <h2>Backend</h2>
-              <p>Python • Java • Django</p>
-            </div>
-            <div class="skill reveal">
-              <h2>Database</h2>
-              <p>MySQL • SQLite</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="left reveal">
 
-      <!-- WORKS -->
-      <section id="works" class="card reveal">
-        <h2>Works & Projects</h2>
-        <div class="projects">
-          <div class="project">Project 1</div>
-          <div class="project">Project 2</div>
-          <div class="project">Project 3</div>
-        </div>
-      </section>
+<img src="assets/img.png" alt="Ritik Sharma">
 
-    </div>
+<h2>Ritik Sharma</h2>
 
-    <script>
-      window.addEventListener("load", () => {
-        gsap.to(".loader span", {
-          opacity: 1,
-          duration: 1,
-          repeat: 2,
-          yoyo: true,
-          onComplete: () => {
-            gsap.to(".loader", {
-              opacity: 0,
-              duration: 1,
-              onComplete: () => {
-                document.querySelector(".loader").style.display = "none";
-                document.querySelector(".main").style.display = "block";
-                document.body.style.overflow = "auto";
-              }
-            })
-          }
-        });
+<div class="socials">
 
-        gsap.utils.toArray(".reveal").forEach(el => {
-          gsap.from(el, {
-            scrollTrigger: { trigger: el, start: "top 80%" },
-            y: 60,
-            opacity: 0,
-            duration: 1
-          });
-        });
-      });
-    </script>
+<a href="https://www.linkedin.com/in/ritik-sharma-93056638b/" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="https://github.com/ritik-sharmaaa" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="card reveal">
+
+<h3>Hello There!</h3>
+
+<h1>
+I am a student learning Web Development,
+focused on frontend, backend and databases.
+</h1>
+
+<div class="status">● Available for learning & projects</div>
+
+<a href="assets/cv.pdf" download class="download-btn">
+Download CV
+</a>
+
+</div>
+
+<div class="skills">
+
+<div class="skill reveal">
+<h2>Frontend</h2>
+<p>HTML • CSS • JavaScript</p>
+</div>
+
+<div class="skill reveal">
+<h2>Backend</h2>
+<p>Python • Java • Django</p>
+</div>
+
+<div class="skill reveal">
+<h2>Database</h2>
+<p>MySQL • SQLite</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WORKS -->
+
+<section id="works" class="card reveal">
+
+<h2>Works & Projects</h2>
+
+<div class="projects">
+
+<div class="project">Project 1</div>
+
+<div class="project">Project 2</div>
+
+<div class="project">Project 3</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+window.addEventListener("load",()=>{
+
+gsap.to(".loader span",{
+opacity:1,
+duration:1,
+repeat:2,
+yoyo:true,
+onComplete:()=>{
+
+gsap.to(".loader",{
+opacity:0,
+duration:1,
+onComplete:()=>{
+
+document.querySelector(".loader").style.display="none";
+document.querySelector(".main").style.display="block";
+document.body.style.overflow="auto";
+
+}
+
+})
+
+}
+
+});
+
+gsap.utils.toArray(".reveal").forEach(el=>{
+
+gsap.from(el,{
+scrollTrigger:{trigger:el,start:"top 80%"},
+y:60,
+opacity:0,
+duration:1
+});
+
+});
+
+});
+
+</script>
 
 </body>
-
 </html>
