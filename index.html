@@ -1,344 +1,421 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ritik Sharma | Portfolio</title>
+```
+<title>Ritik Sharma | Web Developer Portfolio | Python Django Developer</title>
 
-    <meta name="description" content="Ritik Sharma | Full Stack Developer & Data Science Student at IIT Madras. Expertise in Python, Django, and Web UI.">
-    <meta name="keywords" content="Ritik Sharma, Ritik Sharma portfolio, Full Stack Developer, IIT Madras Data Science">
-    <meta name="author" content="Ritik Sharma">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ritiksharmaa.in">
+<meta name="description" content="Ritik Sharma is a web developer and IIT Madras Data Science student skilled in Python, Django, JavaScript and responsive web development.">
+<meta name="keywords" content="Ritik Sharma, Web Developer, Python Developer, Django Developer, IIT Madras">
+<meta name="author" content="Ritik Sharma">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ritiksharmaa.in">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+<meta property="og:title" content="Ritik Sharma | Web Developer Portfolio">
+<meta property="og:description" content="Portfolio of Ritik Sharma - Python, Django and frontend web developer">
+<meta property="og:url" content="https://ritiksharmaa.in">
+<meta property="og:type" content="website">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-        html { scroll-behavior: smooth; }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            background: #000;
-            color: #fff;
-            overflow: hidden; /* Initial lock for loader */
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        /* LOADER SECTION */
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
+    body {
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+    }
 
-        .loader span {
-            letter-spacing: 12px;
-            font-size: 18px;
-            opacity: .2;
-            font-weight: 300;
-        }
+    .loader {
+        position: fixed;
+        inset: 0;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
 
-        /* NAVIGATION - ROHAN STYLE */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 80px;
-            background: #000;
-        }
+    .loader span {
+        letter-spacing: 12px;
+        font-size: 18px;
+        opacity: .2;
+    }
 
-        .logo-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800; /* Extra Bold */
-            font-size: 28px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #fff;
-        }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 80px;
+    }
 
-        .nav-center ul {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-        }
+    .logo-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+    }
 
-        .nav-center a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 400;
-            transition: 0.3s;
-        }
+    .nav-center ul {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+    }
 
-        .nav-center a:hover { color: #aaa; }
+    .nav-center a {
+        color: white;
+        text-decoration: none;
+    }
 
-        /* Hire Me Button */
-        .hire-btn {
-            border: 1px solid #333;
-            padding: 10px 24px;
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s ease;
-        }
+    .hire-btn {
+        border: 1px solid #333;
+        padding: 10px 24px;
+        border-radius: 50px;
+        color: white;
+        text-decoration: none;
+    }
 
-        .hire-btn:hover {
-            background: #fff;
-            color: #000;
-        }
+    .main {
+        display: none;
+        padding: 40px 80px;
+    }
 
-        /* MAIN CONTENT AREA */
-        .main {
-            display: none;
-            padding: 40px 80px;
-        }
+    .hero {
+        display: flex;
+        gap: 30px;
+    }
 
-        /* HERO SECTION */
+    .left {
+        width: 300px;
+        background: #111;
+        border-radius: 25px;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .left img {
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .socials a {
+        width: 40px;
+        height: 40px;
+        background: #1a1a1a;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        background: #111;
+        padding: 40px;
+        border-radius: 25px;
+    }
+
+    .status {
+        margin-top: 20px;
+        color: #7CFF7C;
+        font-size: 14px;
+    }
+
+    .download-btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 28px;
+        background: #ff6a3d;
+        border-radius: 30px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .skills {
+        display: flex;
+        gap: 20px;
+    }
+
+    .skill {
+        flex: 1;
+        background: #111;
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    #works {
+        margin-top: 80px;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .project {
+        position: relative;
+        overflow: hidden;
+        background: #1a1a1a;
+        border-radius: 22px;
+        border: 1px solid #333;
+        padding-bottom: 20px;
+        min-height: 300px;
+    }
+
+    .project-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: rgba(0,0,0,.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: .4s;
+    }
+
+    .project:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay a {
+        width: 65px;
+        height: 65px;
+        background: white;
+        color: black;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+}
+
+.overlay a:hover {
+transform: scale(1.1);
+}
+
+
+    .project h3 {
+        font-size: 28px;
+        padding: 20px 20px 5px;
+    }
+
+    .project p {
+        color: #bbb;
+        padding: 0 20px;
+    }
+
+    @media(max-width:900px) {
         .hero {
-            display: flex;
-            gap: 30px;
+            flex-direction: column;
+        }
+
+        nav,
+        .main {
+            padding: 30px;
+        }
+
+        .nav-center,
+        .hire-btn {
+            display: none;
+        }
+
+        .skills {
+            flex-direction: column;
         }
 
         .left {
-            width: 300px;
-            background: #111;
-            border-radius: 25px;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .left img {
             width: 100%;
-            border-radius: 20px;
-            margin-bottom: 15px;
         }
+    }
+</style>
+```
 
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .socials a {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-
-        .socials a:hover { background: #ff6a3d; transform: translateY(-3px); }
-
-        .right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .card {
-            background: #111;
-            padding: 40px;
-            border-radius: 25px;
-        }
-
-        .status {
-            margin-top: 20px;
-            color: #7CFF7C;
-            font-size: 14px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 28px;
-            background: #ff6a3d;
-            border-radius: 30px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* SKILLS GRID */
-        .skills {
-            display: flex;
-            gap: 20px;
-        }
-
-        .skill {
-            flex: 1;
-            background: #111;
-            padding: 30px;
-            border-radius: 25px;
-            text-align: center;
-        }
-
-        /* WORKS SECTION */
-        #works { margin-top: 80px; }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .project {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media(max-width: 900px) {
-            .hero { flex-direction: column; }
-            nav, .main { padding: 30px; }
-            .nav-center, .hire-btn { display: none; }
-            .skills { flex-direction: column; }
-            .left { width: 100%; }
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="loader">
-        <span>L O A D I N G</span>
+<div class="loader">
+    <span>L O A D I N G</span>
+</div>
+
+<nav>
+    <div class="logo-text">RITIK</div>
+
+```
+<div class="nav-center">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+
+<a href="contact.html" class="hire-btn">Hire Me</a>
+```
+
+</nav>
+
+<div class="main">
+
+```
+<div class="hero" id="about">
+    <div class="left reveal">
+        <img src="assets/img.png" alt="Ritik Sharma web developer profile photo">
+        <h2>Ritik Sharma</h2>
+
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/ritik-sharma-93056638b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ritik-sharmaaa" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </div>
 
-    <nav>
-        <div class="logo-text">RITIK</div>
+    <div class="right">
+        <div class="card reveal">
+            <h3>Hello There!</h3>
+            <h1>Web Developer | Python • Django • Frontend Development</h1>
+            <p style="margin-top:15px;">I am a Data Science student at IIT Madras and an aspiring Full-Stack Web Developer focused on building modern web applications.</p>
 
-        <div class="nav-center">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="service.html">Service</a></li>
-                <li><a href="#works">Works</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="status">● Available for learning & professional projects</div>
+
+            <a href="assets/cv.pdf" download class="download-btn">Download CV</a>
         </div>
 
-        <div>
-            <a href="contact.html" class="hire-btn">
-                Hire Me <i class="fa-solid fa-handshake"></i>
-            </a>
-        </div>
-    </nav>
-
-    <div class="main">
-        
-        <div class="hero" id="about">
-            <div class="left reveal">
-                <img src="assets/img.png" alt="Ritik Sharma">
-                <h2>Ritik Sharma</h2>
-                <div class="socials">
-                    <a href="https://www.linkedin.com/in/ritik-sharma-93056638b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/ritik-sharmaaa" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
+        <div class="skills">
+            <div class="skill reveal">
+                <h2>Frontend</h2>
+                <p>HTML • CSS • JavaScript</p>
             </div>
 
-            <div class="right">
-                <div class="card reveal">
-                    <h3>Hello There!</h3>
-                    <h1>I am a Data Science student at IIT Madras and an aspiring Full-Stack Web Developer who loves building web applications, with a focus on Frontend, Backend, and Databases.</h1>
-                    <div class="status">● Available for learning & professional projects</div>
-                    <a href="assets/cv.pdf" download class="download-btn">Download CV</a>
-                </div>
+            <div class="skill reveal">
+                <h2>Backend</h2>
+                <p>Python • Django • Java</p>
+            </div>
 
-                <div class="skills">
-                    <div class="skill reveal">
-                        <h2>Frontend</h2>
-                        <p>HTML • CSS • JS</p>
-                    </div>
-                    <div class="skill reveal">
-                        <h2>Backend</h2>
-                        <p>Python • Django • Java</p>
-                    </div>
-                    <div class="skill reveal">
-                        <h2>Database</h2>
-                        <p>MySQL • SQLite</p>
-                    </div>
-                </div>
+            <div class="skill reveal">
+                <h2>Database</h2>
+                <p>MySQL • SQLite</p>
             </div>
         </div>
-
-        <section id="works" class="card reveal">
-            <h2>Works & Projects</h2>
-            <div class="projects">
-                <div class="project">Coming soon...</div>
-                <div class="project">Coming soon...</div>
-                <div class="project">Coming soon...</div>
-            </div>
-        </section>
     </div>
+</div>
 
-    <script>
-        window.addEventListener("load", () => {
-            // Reliable Loading Time: ~1.8 Seconds
-            gsap.to(".loader span", {
-                opacity: 1,
+<section id="works" class="card reveal">
+    <h2>Works & Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <img src="assets/project1.png" alt="Portfolio Website Project" class="project-img">
+
+            <div class="overlay">
+                <a href="https://ritiksharmaa.in" target="_blank">↗</a>
+            </div>
+
+            <h3>Portfolio Website</h3>
+            <p>HTML • CSS • JavaScript</p>
+        </div>
+
+        <div class="project">
+            <h3>Coming soon...</h3>
+            <p>Upcoming Project</p>
+        </div>
+
+        <div class="project">
+            <h3>Coming soon...</h3>
+            <p>Upcoming Project</p>
+        </div>
+
+    </div>
+</section>
+```
+
+</div>
+
+<script>
+window.addEventListener("load", () => {
+    gsap.to(".loader span", {
+        opacity: 1,
+        duration: 0.6,
+        repeat: 1,
+        yoyo: true,
+        onComplete: () => {
+            gsap.to(".loader", {
+                opacity: 0,
                 duration: 0.6,
-                repeat: 1,
-                yoyo: true,
                 onComplete: () => {
-                    gsap.to(".loader", {
-                        opacity: 0,
-                        duration: 0.6,
-                        onComplete: () => {
-                            document.querySelector(".loader").style.display = "none";
-                            document.querySelector(".main").style.display = "block";
-                            document.body.style.overflow = "auto";
-                        }
-                    })
+                    document.querySelector(".loader").style.display = "none";
+                    document.querySelector(".main").style.display = "block";
+                    document.body.style.overflow = "auto";
                 }
-            });
+            })
+        }
+    });
 
-            // Content Reveal Animation
-            gsap.utils.toArray(".reveal").forEach(el => {
-                gsap.from(el, {
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 85%"
-                    },
-                    y: 40,
-                    opacity: 0,
-                    duration: 0.8,
-                    ease: "power2.out"
-                });
-            });
+    gsap.utils.toArray(".reveal").forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%"
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8
         });
-    </script>
+    });
+});
+</script>
 
 </body>
 </html>
