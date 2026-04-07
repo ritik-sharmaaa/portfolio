@@ -4,201 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services | Ritik Sharma</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Poppins,sans-serif;
-}
-
-body{
-  background:#000;
-  color:#fff;
-}
-
-/* ===== NAVBAR ===== */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:30px 80px;
-}
-
-nav ul{
-  display:flex;
-  list-style:none;
-  gap:35px;
-}
-
-nav a{
-  color:#aaa;
-  text-decoration:none;
-}
-
-nav a:hover{
-  color:#fff;
-}
-
-.hire{
-  padding:10px 22px;
-  border-radius:25px;
-  border:1px solid #333;
-  background:transparent;
-  color:#fff;
-  cursor:pointer;
-}
-
-/* ===== CONTAINER ===== */
-.container{
-  padding:40px 80px;
-}
-
-/* ===== SERVICES ===== */
-.services{
-  background:#111;
-  border-radius:30px;
-  padding:50px;
-  margin-bottom:60px;
-}
-
-.services h1{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.service-cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:#0c0c0c;
-  border-radius:20px;
-  padding:30px;
-  border:1px solid #1c1c1c;
-  transition:.3s;
-}
-
-.card:hover{
-  border-color:#ff6a3d;
-  transform:translateY(-8px);
-}
-
-.card h3{
-  margin:15px 0 10px;
-}
-
-.card p{
-  color:#aaa;
-  font-size:14px;
-}
-
-/* ===== CTA ===== */
-.cta{
-  background:#111;
-  border-radius:30px;
-  padding:60px 40px;
-  text-align:center;
-}
-
-.cta h2{
-  margin-bottom:20px;
-}
-
-.cta p{
-  max-width:600px;
-  margin:auto;
-  color:#aaa;
-}
-
-.cta button{
-  margin-top:30px;
-  padding:14px 32px;
-  background:#ff6a3d;
-  border:none;
-  border-radius:30px;
-  color:#fff;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  display:flex;
-  justify-content:space-between;
-  padding:40px 80px;
-  color:#777;
-  font-size:14px;
-}
-
-/* ===== RESPONSIVE ===== */
+*{ margin:0; padding:0; box-sizing:border-box; font-family:Poppins,sans-serif; }
+body{ background:#000; color:#fff; overflow-x:hidden; }
+ 
+/* NAV */
+nav{ display:flex; justify-content:space-between; align-items:center; padding:30px 80px; }
+nav ul{ display:flex; list-style:none; gap:35px; }
+nav a{ color:#aaa; text-decoration:none; transition:.3s; }
+nav a:hover{ color:#fff; }
+.hire{ padding:10px 22px; border-radius:25px; border:1px solid #333; background:transparent; color:#fff; cursor:pointer; transition:.3s; }
+.hire:hover{ border-color:#ff6a3d; color:#ff6a3d; }
+ 
+/* HAMBURGER */
+.hamburger{ display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:5px; z-index:1001; }
+.hamburger span{ display:block; width:25px; height:2px; background:#fff; border-radius:2px; transition:.3s; }
+.hamburger.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2){ opacity:0; }
+.hamburger.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+ 
+/* MOBILE MENU */
+.mobile-menu{ display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#000; z-index:1000; flex-direction:column; align-items:center; justify-content:center; gap:30px; }
+.mobile-menu.open{ display:flex; }
+.mobile-menu a{ color:#fff; text-decoration:none; font-size:24px; font-weight:600; transition:.3s; }
+.mobile-menu a:hover{ color:#ff6a3d; }
+.mobile-menu .hire-mobile{ margin-top:10px; padding:12px 32px; border:1px solid #333; border-radius:50px; font-size:16px; }
+ 
+/* CONTAINER */
+.container{ padding:40px 80px; }
+ 
+/* SERVICES */
+.services{ background:#111; border-radius:30px; padding:50px; margin-bottom:60px; }
+.services h1{ text-align:center; margin-bottom:40px; font-size:clamp(22px,4vw,40px); }
+.service-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.card{ background:#0c0c0c; border-radius:20px; padding:30px; border:1px solid #1c1c1c; transition:.3s; }
+.card:hover{ border-color:#ff6a3d; transform:translateY(-8px); }
+.card h3{ margin:15px 0 10px; }
+.card p{ color:#aaa; font-size:14px; }
+ 
+/* CTA */
+.cta{ background:#111; border-radius:30px; padding:60px 40px; text-align:center; }
+.cta h2{ margin-bottom:20px; font-size:clamp(18px,3vw,32px); }
+.cta p{ max-width:600px; margin:auto; color:#aaa; }
+.cta button{ margin-top:30px; padding:14px 32px; background:#ff6a3d; border:none; border-radius:30px; color:#fff; font-size:16px; cursor:pointer; transition:.3s; }
+.cta button:hover{ background:#e05530; }
+ 
+/* FOOTER */
+footer{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; padding:40px 80px; color:#777; font-size:14px; }
+ 
+/* RESPONSIVE */
 @media(max-width:900px){
-  nav,.container,footer{
-    padding:30px;
-  }
+    nav{ padding:20px 30px; }
+    .container{ padding:20px 30px; }
+    footer{ padding:30px; }
+    nav ul, .hire{ display:none; }
+    .hamburger{ display:flex; }
+    .services{ padding:30px 25px; }
+    .service-cards{ grid-template-columns:1fr; }
+    .cta{ padding:40px 25px; }
+}
+ 
+@media(max-width:600px){
+    nav{ padding:18px 20px; }
+    .container{ padding:15px 20px; }
+    footer{ padding:20px; flex-direction:column; gap:5px; }
+    .service-cards{ grid-template-columns:1fr; }
 }
 </style>
 </head>
 <body>
-
+ 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="index.html#about" onclick="closeMobileMenu()">About</a>
+    <a href="service.html" onclick="closeMobileMenu()">Service</a>
+    <a href="index.html#works" onclick="closeMobileMenu()">Works</a>
+    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+    <a href="contact.html" class="hire-mobile">Hire Me</a>
+</div>
+ 
 <!-- NAV -->
 <nav>
-  <h2>RITIK</h2>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="service.html">Service</a></li>
-    <li><a href="#">Works</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="hire">Hire Me</button>
+    <h2>RITIK</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hire" onclick="window.location.href='contact.html'">Hire Me</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
 </nav>
-
+ 
 <div class="container">
-
-  <!-- SERVICES -->
-  <div class="services">
-    <h1>Quality Services</h1>
-
-    <div class="service-cards">
-      <div class="card">
-        <h3>Full Stack Development</h3>
-        <p>Frontend + Backend + Database solutions with clean architecture.</p>
-      </div>
-
-      <div class="card">
-        <h3>Brand Identity Design</h3>
-        <p>Creative design solutions to build strong brand presence.</p>
-      </div>
-
-      <div class="card">
-        <h3>Application Design</h3>
-        <p>User-friendly and problem-solving UI/UX focused designs.</p>
-      </div>
+    <!-- SERVICES -->
+    <div class="services">
+        <h1>Quality Services</h1>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Full Stack Development</h3>
+                <p>Frontend + Backend + Database solutions with clean architecture.</p>
+            </div>
+            <div class="card">
+                <h3>Brand Identity Design</h3>
+                <p>Creative design solutions to build strong brand presence.</p>
+            </div>
+            <div class="card">
+                <h3>Application Design</h3>
+                <p>User-friendly and problem-solving UI/UX focused designs.</p>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta">
-    <h2>Are You Ready to kickstart your project with a touch of magic?</h2>
-    <p>
-      Reach out and let's make it happen ✨
-      I am available for learning, collaboration and project-based work.
-    </p>
-    <button>Let's Talk</button>
-  </div>
-
+ 
+    <!-- CTA -->
+    <div class="cta">
+        <h2>Are You Ready to kickstart your project with a touch of magic?</h2>
+        <p>Reach out and let's make it happen ✨ I am available for learning, collaboration and project-based work.</p>
+        <button onclick="window.location.href='contact.html'">Let's Talk</button>
+    </div>
 </div>
-
+ 
 <footer>
-  <p>Copyright © 2026, Ritik Sharma. All Rights Reserved.</p>
-  <p>Crafted with HTML & CSS</p>
+    <p>Copyright &copy; 2026, Ritik Sharma. All Rights Reserved.</p>
+    <p>Crafted with HTML &amp; CSS</p>
 </footer>
-
+ 
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : 'auto';
+    });
+    function closeMobileMenu() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+</script>
 </body>
 </html>
